@@ -1,0 +1,15 @@
+<script src="node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+<ion-navbar *navbar>
+  <ion-title>
+    Tab 3
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="page3">
+<base-chart class="chart"
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></base-chart>
+</ion-content>

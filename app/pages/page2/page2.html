@@ -1,0 +1,47 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    MyUKM
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="page2">
+  <ion-list inset>
+    <ion-item danger>
+    <ion-row center>
+    <ion-col><div>
+        <h4>Name</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>Code</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>Quantity</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>Price</h4>
+    </div></ion-col>
+    </ion-row>
+    </ion-item>
+    <ion-item danger  *ngFor="let inventory of inventories">
+    <ion-row center>
+    <ion-col><div>
+        <h4>{{inventory.name}}</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>{{inventory.code}}</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>{{inventory.quantity}}</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>{{inventory.price}}</h4>
+    </div></ion-col>
+    </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <button large fab danger fab-bottom fab-right class="fab-footer" (click)="goToAddInventory()">
+    <ion-icon name="add" ></ion-icon>
+  </button>
+</ion-content>

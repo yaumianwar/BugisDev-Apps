@@ -1,0 +1,45 @@
+<ion-navbar *navbar>
+  <ion-title>MyUKM</ion-title>
+</ion-navbar>
+
+<ion-content padding class="page1">
+
+  <ion-list inset>
+    <ion-item danger>
+    <ion-row center>
+    <ion-col><div>
+        <h4>Date</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>Code</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>Quantity</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>Amount</h4>
+    </div></ion-col>
+    </ion-row>
+    </ion-item>
+    <ion-item danger  *ngFor="let selling of sellings">
+    <ion-row center>
+    <ion-col><div>
+        <h4>{{selling.date}}</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>{{selling.code}}</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>{{selling.quantity}}</h4>
+    </div></ion-col>
+    <ion-col><div>
+        <h4>{{selling.amount}}</h4>
+    </div></ion-col>
+    </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <button large fab danger fab-bottom fab-right class="fab-footer" (click)="goToAddSelling()">
+    <ion-icon name="add" ></ion-icon>
+  </button>
+</ion-content>
