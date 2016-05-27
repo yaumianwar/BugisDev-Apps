@@ -1,40 +1,30 @@
-import {Page} from 'ionic-angular';
-
-import {Component} from '@angular/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass} from '@angular/common';
-
-import {CHART_DIRECTIVES} from '../../../ng2-charts';
-
-// webpack html imports
-let template = require('./doughnut-chart-demo.html');
-
-@Component({
-  selector: 'doughnut-chart-demo',
-  template: template,
-  directives: [CHART_DIRECTIVES, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES]
-})
-export class DoughnutChartDemoComponent {
-  // Doughnut
-  public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData:number[] = [350, 450, 100];
-  public doughnutChartType:string = 'doughnut';
-
-  // events
-  public chartClicked(e:any):void {
-    console.log(e);
-  }
-
-  public chartHovered(e:any):void {
-    console.log(e);
-  }
-}
+import {Page, NavController, ViewController} from 'ionic-angular';
+import {AddInventory} from '../add-inventory/add-inventory';
 
 
 @Page({
   templateUrl: 'build/pages/page3/page3.html'
 })
 export class Page3 {
-  constructor() {
+  static get parameters() {
+    return [[NavController], [ViewController]];
+  }
+  constructor(nav, view) {
+    this.nav = nav;
+    this.view = view;
+    this.getInventory();
 
+  }
+
+  goToAddInventory(){
+    this.nav.push(AddInventory);
+  }
+
+  getInventory(){
+    this.inventories=[
+    {name:"test", code:"NY12", quantity:"4", price:"2000"},
+    {name:"test", code:"NY43", quantity:"7", price:"1000"},
+    {name:"test", code:"NY16", quantity:"2", price:"2300"}
+    ]
   }
 }

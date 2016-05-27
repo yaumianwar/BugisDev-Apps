@@ -1,27 +1,32 @@
 <!--
-  Generated template for the AddSellingPage page.
+  Generated template for the AddOrderPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-navbar *navbar>
-  <ion-title>AddSelling</ion-title>
+  <ion-title>AddOrder</ion-title>
 </ion-navbar>
 
-<ion-content padding class="add-selling">
-<ion-list>
+<ion-content padding class="add-order">
+  <ion-list>
         <ion-item>
-            <ion-label>Date</ion-label>
+            <ion-label>Exp Date</ion-label>
             <ion-input type="date" value=""></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label floating> Stock Code</ion-label>
+            <ion-label floating>Code</ion-label>
             <ion-input type="text" value=""></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label floating> Order Code</ion-label>
+            <ion-label floating>Stock Code</ion-label>
+            <ion-input type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Costumer Code</ion-label>
             <ion-input type="text" value=""></ion-input>
         </ion-item>
 
@@ -33,4 +38,5 @@
         <button primary block (click)="addUser()">Tambahkan</button>
     </div>
     </ion-list>
+</ion-content>
 </ion-content>
