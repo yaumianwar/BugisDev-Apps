@@ -5,7 +5,8 @@ import {OrderAPI} from '../services/OrderAPI';
 
 
 @Page({
-  templateUrl: 'build/pages/page2/page2.html'
+  templateUrl: 'build/pages/page2/page2.html',
+  providers: [OrderAPI]
 })
 export class Page2 {
     static get parameters() {
@@ -15,7 +16,7 @@ export class Page2 {
     this.nav = nav;
     this.view = view;
     this.api = api;
-    this.orders =orders;
+    this.getOrders();
 
   }
 
@@ -37,11 +38,11 @@ export class Page2 {
     this.nav.push(DetailOrderpage);
   }
 
-  getOrder(){
+  /* getOrder(){
     this.orders=[
     {CostumerName:"Yaumi", Code:"NY12", Quantity:"4", IsSaled:"paid"},
     {CostumerName:"Indah", Code:"NY43", Quantity:"7", IsSaled:"not paid"},
     {CostumerName:"Indi", Code:"NY16", Quantity:"2", IsSaled:"paid"}
     ]
-  }
+  } */
 }
