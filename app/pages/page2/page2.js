@@ -1,5 +1,7 @@
 import {Page, NavController, ViewController} from 'ionic-angular';
-import {AddOrder} from '../add-order/add-order';
+import {AddOrderPage} from '../add-order/add-order';
+import {DetailOrderpage} from '../detail-order/detail-order';
+import {OrderAPI} from '../services/OrderAPI';
 
 
 @Page({
@@ -7,24 +9,39 @@ import {AddOrder} from '../add-order/add-order';
 })
 export class Page2 {
     static get parameters() {
-    return [[NavController], [ViewController]];
+    return [[NavController], [ViewController], [OrderAPI]];
   }
-  constructor(nav, view) {
+  constructor(nav, view, api) {
     this.nav = nav;
     this.view = view;
-    this.getOrder();
+    this.api = api;
+    this.orders =orders;
 
   }
 
+  getOrders() {
+
+        this.api.getOrders()
+        .subscribe(data => {
+            this.orders = data.data;
+        }, error => {
+            console.log(JSON.stringify(error.json()));
+        });
+    }
+
   goToAddOrder(){
-    this.nav.push(AddOrder);
+    this.nav.push(AddOrderPage);
+  }
+
+  goToDetail(){
+    this.nav.push(DetailOrderpage);
   }
 
   getOrder(){
     this.orders=[
-    {date:"2016/09/02", code:"NY12", quantity:"4", amount:"45000"},
-    {date:"2016/09/02", code:"NY43", quantity:"7", amount:"36000"},
-    {date:"2016/01/05", code:"NY16", quantity:"2", amount:"100000"}
+    {CostumerName:"Yaumi", Code:"NY12", Quantity:"4", IsSaled:"paid"},
+    {CostumerName:"Indah", Code:"NY43", Quantity:"7", IsSaled:"not paid"},
+    {CostumerName:"Indi", Code:"NY16", Quantity:"2", IsSaled:"paid"}
     ]
   }
 }

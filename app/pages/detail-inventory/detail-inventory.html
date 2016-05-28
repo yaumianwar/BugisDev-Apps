@@ -9,5 +9,12 @@
 </ion-navbar>
 
 <ion-content padding class="detail-inventory">
-  
+<ion-list>
+  <ion-item *ngFor="let inventory of inventories">
+    <h2>{{inventory.Name}}({{inventory.Code}})</h2>
+    <p>Price: {{inventory.Price}}</p>
+    <p>Available: {{inventory.Quantity}}</p>
+    <p>Description: {{inventory.Description}}</p>
+  </ion-item>
+</ion-list>
 </ion-content>

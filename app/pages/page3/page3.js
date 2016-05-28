@@ -1,6 +1,6 @@
 import {Page, NavController, ViewController} from 'ionic-angular';
-import {AddInventory} from '../add-inventory/add-inventory';
-
+import {AddInventoryTypePage} from '../add-inventory-type/add-inventory-type';
+import {ListInventoryPage} from '../list-inventory/list-inventory';
 
 @Page({
   templateUrl: 'build/pages/page3/page3.html'
@@ -12,19 +12,23 @@ export class Page3 {
   constructor(nav, view) {
     this.nav = nav;
     this.view = view;
-    this.getInventory();
+    this.getInventoryType();
 
   }
 
-  goToAddInventory(){
-    this.nav.push(AddInventory);
+  goToAddInventoryType(){
+    this.nav.push(AddInventoryTypePage);
   }
 
-  getInventory(){
-    this.inventories=[
-    {name:"test", code:"NY12", quantity:"4", price:"2000"},
-    {name:"test", code:"NY43", quantity:"7", price:"1000"},
-    {name:"test", code:"NY16", quantity:"2", price:"2300"}
+  goToListInventory(){
+    this.nav.push(ListInventoryPage);
+  }
+
+  getInventoryType(){
+    this.inventories_type=[
+    {name:"Clothes", code:"NY11", available:"4", soldout:"56"},
+    {name:"Pants", code:"NY12", available:"7", soldout:"39"},
+    {name:"Other", code:"NY13", available:"2", soldout:"70"}
     ]
   }
 }

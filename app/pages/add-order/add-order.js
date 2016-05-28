@@ -1,4 +1,5 @@
 import {Page, NavController} from 'ionic-angular';
+import {OrderAPI} from '../services/OrderAPI';
 
 /*
   Generated class for the AddOrderPage page.
@@ -8,13 +9,25 @@ import {Page, NavController} from 'ionic-angular';
 */
 @Page({
   templateUrl: 'build/pages/add-order/add-order.html',
+  providers:[OrderAPI]
 })
 export class AddOrderPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavController], [OrderAPI]];
   }
 
-  constructor(nav) {
+  constructor(nav, api) {
     this.nav = nav;
+    this.order = {};
+    this.api = api;
+  }
+
+  addOrder(){
+    this.api.addOrder(this.order)
+    .subscribe(data => {
+      this.orders = data.data;
+    }, error => {
+      console.log(JSON.stringify(error.json()))
+    })
   }
 }

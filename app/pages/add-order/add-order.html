@@ -5,38 +5,42 @@
   Ionic pages and navigation.
 -->
 <ion-navbar *navbar>
-  <ion-title>AddOrder</ion-title>
+  <ion-title>MyPocket</ion-title>
 </ion-navbar>
 
 <ion-content padding class="add-order">
   <ion-list>
         <ion-item>
-            <ion-label>Exp Date</ion-label>
+            <ion-label>Inventory Code</ion-label>
+            <ion-select [(ngModel)]="let a of InventoryDetail">
+                <ion-option value="a.ID" [(ngModel)]="Order.InventoryDetailID">{{a.Name}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Quantity</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="Order.Quantity"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label floating>Expired Date</ion-label>
             <ion-input type="date" value=""></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label floating>Code</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-label floating>Costumer Name</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="Order.CostumerName"></ion-input>
         </ion-item>
 
-        <ion-item>
-            <ion-label floating>Stock Code</ion-label>
-            <ion-input type="text" value=""></ion-input>
-        </ion-item>
 
         <ion-item>
-            <ion-label floating>Costumer Code</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-label floating>Status</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="Order.IsSaled"></ion-input>
         </ion-item>
 
-        <ion-item>
-            <ion-label floating>Quantity</ion-label>
-            <ion-input type="number" value=""></ion-input>
-        </ion-item>
     <div padding>
-        <button primary block (click)="addUser()">Tambahkan</button>
+        <button primary block (click)="addOrder()">Add</button>
     </div>
     </ion-list>
 </ion-content>
-</ion-content>
+

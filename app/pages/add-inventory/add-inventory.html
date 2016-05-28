@@ -9,28 +9,41 @@
 </ion-navbar>
 
 <ion-content padding class="add-inventory">
-<ion-list *ngSwitchWhen="'inventory'">
+<ion-list>
+
+        <!--<ion-item>
+            <ion-label>Inventory Type</ion-label>
+            <ion-select [(ngModel)]="let a of InventoryHeader">
+                <ion-option value="a.ID" [(ngModel)]="InventoryDetail.InventoryHeaderID">{{a.Name}}</ion-option>
+            </ion-select>-->
+        </ion-item>
         <ion-item>
             <ion-label floating>Name</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" value="" [(ngModel)]="InventoryDetail.Nama"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label floating>Code</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-input type="text" value="" [(ngModel)]="InventoryDetail.Code"></ion-input>
         </ion-item>
 
         <ion-item>
+            <ion-label floating>Description</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="InventoryDetail.Description"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
             <ion-label floating>Quantity</ion-label>
-            <ion-input type="number" value=""></ion-input>
+            <ion-input type="number" value="" [(ngModel)]="InventoryDetail.Quantity"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label floating>price</ion-label>
-            <ion-input type="number" value=""></ion-input>
+            <ion-input type="number" value="" [(ngModel)]="InventoryDetail.Price"></ion-input>
         </ion-item>
         <div padding>
-        <button primary block (click)="addUser()">Tambahkan</button>
+        <button primary block (click)="addInventoryDetail()">Add</button>
     </div>
     </ion-list>
 </ion-content>

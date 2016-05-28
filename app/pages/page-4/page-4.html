@@ -1,9 +1,14 @@
+<!--
+  Generated template for the Page4Page page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-navbar *navbar>
   <ion-title>MyPocket</ion-title>
 </ion-navbar>
 
-<ion-content padding class="page2">
-
+<ion-content padding class="page-4">
   <ion-list inset>
     <ion-item danger>
     <ion-row item-center>
@@ -17,31 +22,25 @@
         <h4>Quantity</h4>
     </div></ion-col>
     <ion-col><div>
-        <h4>Status</h4>
+        <h4>Amount</h4>
     </div></ion-col>
     </ion-row>
     </ion-item>
-    <ion-item danger  *ngFor="let order of orders" (click)="goToDetail(order)">
+    <ion-item danger  *ngFor="let selling of sellings">
     <ion-row item-center>
     <ion-col><div>
-        <h4>{{order.Code}}</h4>
+        <h4>{{selling.InvoiceNumber}}</h4>
     </div></ion-col>
     <ion-col><div>
-        <h4>{{order.CostumerName}}</h4>
+        <h4>{{selling.Costumer}}</h4>
     </div></ion-col>
     <ion-col><div>
-        <h4>{{order.Quantity}}</h4>
+        <h4>{{selling.Quantity}}</h4>
     </div></ion-col>
     <ion-col><div>
-        <h4>{{order.IsSaled}}</h4>
+        <h4>{{selling.Amount}}</h4>
     </div></ion-col>
     </ion-row>
     </ion-item>
   </ion-list>
-  <button large fab fab-bottom fab-right class="fab-footer" (click)="goToAddOrder()">
-    <ion-icon name="add" ></ion-icon>
-  </button>
-
 </ion-content>
-
-
