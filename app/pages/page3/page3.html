@@ -1,47 +1,22 @@
 
-<ion-navbar *navbar>
+<ion-navbar *navbar yellow>
   <ion-title>
     MyPocket
   </ion-title>
 </ion-navbar>
 
 <ion-content class="page3">
-<ion-list inset>
-    <ion-item danger>
-    <ion-row center>
-    <ion-col><div>
-        <h4>Name</h4>
-    </div></ion-col>
-    <ion-col><div>
-        <h4>Code</h4>
-    </div></ion-col>
-    <ion-col><div>
-        <h4>Available</h4>
-    </div></ion-col>
-    <ion-col><div>
-        <h4>Sold Out</h4>
-    </div></ion-col>
-    </ion-row>
-    </ion-item>
-    <ion-item danger  *ngFor="let inventory of inventories_type" (click)="ListInventoryPage()">
-    <ion-row center>
-    <ion-col><div>
-        <h4>{{inventory.name}}</h4>
-    </div></ion-col>
-    <ion-col><div>
-        <h4>{{inventory.code}}</h4>
-    </div></ion-col>
-    <ion-col><div>
-        <h4>{{inventory.available}}</h4>
-    </div></ion-col>
-    <ion-col><div>
-        <h4>{{inventory.available}}</h4>
-    </div></ion-col>
-    </ion-row>
-    </ion-item>
+
+  <ion-list>
+  <ion-item *ngFor="let inventory of inventories" (click)="ListInventoryPage()">
+    <h2>{{inventory.Name}}</h2>
+    <p>{{inventory.Descripsion}}</p>
+    <p>Available: 6</p>
+    <p>Description: 67</p>
+  </ion-item>
   </ion-list>
 
-  <button large fab fab-bottom fab-right class="fab-footer" (click)="goToAddInventoryType()">
+  <button large yellow fab fab-bottom fab-right class="fab-footer" (click)="goToAddInventoryType()">
     <ion-icon name="add" ></ion-icon>
   </button>
 

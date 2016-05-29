@@ -1,6 +1,6 @@
 import {Page, NavController, ViewController} from 'ionic-angular';
 import {AddOrderPage} from '../add-order/add-order';
-import {DetailOrderpage} from '../detail-order/detail-order';
+import {DetailOrderPage} from '../detail-order/detail-order';
 import {OrderAPI} from '../services/OrderAPI';
 
 
@@ -35,7 +35,7 @@ export class Page2 {
   }
 
   goToDetail(){
-    this.nav.push(DetailOrderpage);
+    this.nav.push(DetailOrderPage);
   }
 
   /* getOrder(){

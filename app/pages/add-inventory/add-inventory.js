@@ -23,7 +23,7 @@ export class AddInventoryPage {
   }
 
   addInventoryDetail(){
-    this.api.addOrder(this.inventoryDetail)
+    this.api.addInventoryDetail(this.inventoryDetail)
     .subscribe(data => {
       this.inventoryDetails = data.data;
     }, error => {

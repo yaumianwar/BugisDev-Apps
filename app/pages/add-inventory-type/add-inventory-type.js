@@ -9,6 +9,7 @@ import {InventoryHeaderAPI} from '../services/InventoryHeaderAPI';
 */
 @Page({
   templateUrl: 'build/pages/add-inventory-type/add-inventory-type.html',
+  providers: [InventoryHeaderAPI]
 })
 export class AddInventoryTypePage {
   static get parameters() {
@@ -22,7 +23,7 @@ export class AddInventoryTypePage {
   }
 
   addInventoryHeader(){
-    this.api.addOrder(this.inventoryHeader)
+    this.api.addInventoryHeader(this.inventoryHeader)
     .subscribe(data => {
       this.inventoryHeaders = data.data;
     }, error => {
